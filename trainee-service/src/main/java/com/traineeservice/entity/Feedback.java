@@ -38,6 +38,38 @@ public class Feedback implements Serializable {
 
 	@Column(name = "rating")
 	private Integer rating;
+
+	public Long getFeedbackId() {
+		return feedbackId;
+	}
+
+	public void setFeedbackId(Long feedbackId) {
+		this.feedbackId = feedbackId;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
 	
 //	@OneToOne
 //	@JoinColumn(name="profile_id")

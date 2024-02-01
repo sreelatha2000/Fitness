@@ -3,9 +3,10 @@ package com.traineeservice.serviceimpl;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.traineeservice.entity.Achievement;
 import com.traineeservice.exception.NoSuchRecordFoundException;
 import com.traineeservice.repository.AchievementRepository;
@@ -16,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class AchievementServiceImpl implements AchievementService {
+	public static Logger log=LoggerFactory.getLogger(Achievement.class.getSimpleName());
 	@Autowired
 
 	private AchievementRepository achievementRepository;

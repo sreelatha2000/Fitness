@@ -43,4 +43,52 @@ public class Workout implements Serializable{
 	@Column(name="user_id")
 	private Long userId;
 
+	public Long getWorkoutId() {
+		return workoutId;
+	}
+
+	public void setWorkoutId(Long workoutId) {
+		this.workoutId = workoutId;
+	}
+
+	public Date getWorkoutDate() {
+		return workoutDate;
+	}
+
+	public void setWorkoutDate(Date workoutDate) {
+		this.workoutDate = workoutDate;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public String getCaloriesBurned() {
+		return caloriesBurned;
+	}
+
+	public void setCaloriesBurned(String caloriesBurned) {
+		this.caloriesBurned = caloriesBurned;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
 }

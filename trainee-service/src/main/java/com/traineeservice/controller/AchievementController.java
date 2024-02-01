@@ -2,6 +2,8 @@ package com.traineeservice.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.traineeservice.entity.Achievement;
 import com.traineeservice.exception.NoSuchRecordFoundException;
 import com.traineeservice.service.AchievementService;
@@ -24,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(path = "achievement")
 public class AchievementController {
+	public static Logger log = LoggerFactory.getLogger(Achievement.class.getSimpleName());
 	@Autowired
 	private AchievementService achievementService;
 
@@ -41,14 +43,13 @@ public class AchievementController {
 	@GetMapping(path = "/getById/{id}")
 	public ResponseEntity<Achievement> get(@PathVariable Long id) {
 		log.info("Fetching achievement {}", id);
-		
-			Achievement achievement = achievementService.get(id);
 
-			ResponseEntity<Achievement> responseEntity = new ResponseEntity<>(achievement, HttpStatus.OK);
+		Achievement achievement = achievementService.get(id);
 
-			return responseEntity;
-		
-		
+		ResponseEntity<Achievement> responseEntity = new ResponseEntity<>(achievement, HttpStatus.OK);
+
+		return responseEntity;
+
 	}
 
 	@GetMapping(path = "/getAll")
@@ -61,7 +62,7 @@ public class AchievementController {
 
 	@DeleteMapping(path = "/deleteById/{id}")
 	public String deleteById(@PathVariable Long id) {
-		
+
 		log.info("deleting achievement{}", id);
 		achievementService.deleteById(id);
 		return "deleted";
@@ -77,11 +78,11 @@ public class AchievementController {
 
 	@PutMapping(path = "/updateById/{id}")
 	public ResponseEntity<Achievement> update(@RequestBody Achievement achievement) {
-		
-			Achievement achievementUpdate = achievementService.update(achievement);
 
-			ResponseEntity<Achievement> responseEntity = new ResponseEntity<>(achievementUpdate, HttpStatus.OK);
-			return responseEntity;
+		Achievement achievementUpdate = achievementService.update(achievement);
+
+		ResponseEntity<Achievement> responseEntity = new ResponseEntity<>(achievementUpdate, HttpStatus.OK);
+		return responseEntity;
 
 	}
 

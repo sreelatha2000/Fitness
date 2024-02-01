@@ -44,5 +44,37 @@ public class Achievement implements Serializable {
 //	@OneToOne
 //	@JoinColumn(name="profile_id")
 //	private Long profileId;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getAchievementType() {
+		return achievementType;
+	}
+
+	public void setAchievementType(String achievementType) {
+		this.achievementType = achievementType;
+	}
+
+	public Date getDateCompleted() {
+		return dateCompleted;
+	}
+
+	public void setDateCompleted(Date dateCompleted) {
+		this.dateCompleted = dateCompleted;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 }

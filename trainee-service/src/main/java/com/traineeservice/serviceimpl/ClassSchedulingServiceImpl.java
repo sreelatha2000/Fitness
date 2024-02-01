@@ -3,6 +3,8 @@ package com.traineeservice.serviceimpl;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class ClassSchedulingServiceImpl implements ClassSchedulingService {
 	@Autowired
-
+	public static Logger log=LoggerFactory.getLogger(ClassScheduling.class.getSimpleName());
 	private ClassSchedulingRepository classSchedulingRepository;
 
 	@Override
