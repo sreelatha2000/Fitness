@@ -41,6 +41,11 @@ public class Attendance  implements Serializable{
 
 	@Column(name="feedback")
 	private String feedback;
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 //	@OneToOne
 //	@JoinColumn(name="profile_id")

@@ -2,12 +2,12 @@ package com.traineeservice.serviceimpl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.traineeservice.entity.Achievement;
 import com.traineeservice.entity.Attendance;
 import com.traineeservice.exception.NoSuchRecordFoundException;
 import com.traineeservice.repository.AttendanceRepository;
@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class AttendanceServiceImpl implements AttendanceService {
+	public static Logger log = LoggerFactory.getLogger(AttendanceService.class.getSimpleName());
 	@Autowired
 
 	private AttendanceRepository attendanceRepository;

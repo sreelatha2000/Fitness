@@ -38,6 +38,11 @@ public class Feedback implements Serializable {
 
 	@Column(name = "rating")
 	private Integer rating;
+
+	public Long getFeedbackId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 //	@OneToOne
 //	@JoinColumn(name="profile_id")
