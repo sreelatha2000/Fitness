@@ -2,8 +2,6 @@ package com.management.bean;
 
 import java.util.Date;
 
-import jakarta.persistence.Column;
-
 public class User {
 	private Long userId;
 	private String userName;

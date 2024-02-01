@@ -1,7 +1,5 @@
 package com.management.bean;
 
-import jakarta.persistence.Column;
-
 public class Guest 
 {
 	private Long guestId;

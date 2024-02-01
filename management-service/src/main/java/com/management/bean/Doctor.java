@@ -1,7 +1,5 @@
 package com.management.bean;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 public class Doctor
 {
 	private Long doctorId;
