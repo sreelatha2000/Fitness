@@ -3,14 +3,13 @@ package com.traineeservice.serviceimpl;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.traineeservice.entity.Achievement;
-import com.traineeservice.entity.Attendance;
 import com.traineeservice.entity.ClassScheduling;
 import com.traineeservice.exception.NoSuchRecordFoundException;
-import com.traineeservice.repository.AttendanceRepository;
 import com.traineeservice.repository.ClassSchedulingRepository;
 import com.traineeservice.service.ClassSchedulingService;
 
@@ -19,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class ClassSchedulingServiceImpl implements ClassSchedulingService {
+	public static Logger log = LoggerFactory.getLogger(ClassSchedulingService.class.getSimpleName());
 	@Autowired
 
 	private ClassSchedulingRepository classSchedulingRepository;
