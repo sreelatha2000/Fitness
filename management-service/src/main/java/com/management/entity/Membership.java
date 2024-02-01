@@ -1,5 +1,7 @@
 package com.management.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,8 +11,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="membership_table")
-public class Membership {
-	private static final Long serialVersionUID = -1516965327693370237L;
+public class Membership implements Serializable{
+	
+	private static final long serialVersionUID = -2287851328229796353L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="membership_id")

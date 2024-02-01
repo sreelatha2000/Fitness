@@ -14,7 +14,8 @@ import jakarta.persistence.Table;
 @Table(name="user_profile")
 public class User implements Serializable
 {
-	private static final Long serialVersionUID = -1516965327693370237L;
+	private static final long serialVersionUID = 4358596869124424986L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="user_id")

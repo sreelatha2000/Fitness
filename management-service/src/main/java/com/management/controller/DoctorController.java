@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.management.entity.Doctor;
-import com.management.entity.Trainer;
 import com.management.service.DoctorService;
-import com.management.service.TrainerService;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,5 +1,7 @@
 package com.management.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,9 +11,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="guest_table")
-public class Guest 
+public class Guest implements Serializable
 {
-	private static final Long serialVersionUID = -1516965327693370237L;
+	static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="guest_id")
