@@ -6,7 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table(name="doctor_profile")
 public class Doctor 
@@ -29,49 +33,7 @@ public class Doctor
 	private String specialization;
 	@Column(name="gender")
 	private String gender;
-	
-	public Long getDoctorId() {
-		return doctorId;
-	}
-	public void setDoctorId(Long doctorId) {
-		this.doctorId = doctorId;
-	}
-	public String getDoctorName() {
-		return doctorName;
-	}
-	public void setDoctorName(String doctorName) {
-		this.doctorName = doctorName;
-	}
-	public Integer getYearOfExperience() {
-		return yearOfExperience;
-	}
-	public void setYearOfExperience(Integer yearOfExperience) {
-		this.yearOfExperience = yearOfExperience;
-	}
-	public String getContactNumber() {
-		return contactNumber;
-	}
-	public void setContactNumber(String contactNumber) {
-		this.contactNumber = contactNumber;
-	}
-	public String getShiftTimings() {
-		return shiftTimings;
-	}
-	public void setShiftTimings(String shiftTimings) {
-		this.shiftTimings = shiftTimings;
-	}
-	public String getSpecialization() {
-		return specialization;
-	}
-	public void setSpecialization(String specialization) {
-		this.specialization = specialization;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+
 	
 	
 	

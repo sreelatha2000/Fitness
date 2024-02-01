@@ -15,44 +15,38 @@ import com.healthservice.service.UserNutritionService;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("nutrition")
 public class NutritionController {
 
 	@Autowired
 	UserNutritionService service;
-	
+
 	@PostMapping("/save")
-	public Nutrition saveNewNutrition(@RequestBody Nutrition bean)
-	{
+	public Nutrition saveNewNutrition(@RequestBody Nutrition bean) {
 		return service.saveNewNutrition(bean);
-		
+
 	}
-	
+
 	@GetMapping("/getById/{nutritionId}")
-	public Nutrition getById(@PathVariable Integer nutritionId)
-	{
+	public Nutrition getById(@PathVariable Integer nutritionId) {
 		return service.getById(nutritionId);
 	}
-	
+
 	@GetMapping("/getAll")
-	public List<Nutrition> getAll()
-	{
+	public List<Nutrition> getAll() {
 		return service.getAllNutrition();
 	}
-	
+
 	@PutMapping("/updateById")
-	public Nutrition update(@RequestBody Nutrition bean)
-	{
+	public Nutrition update(@RequestBody Nutrition bean) {
 		return service.updateNutrition(bean);
-		
+
 	}
 
 	@DeleteMapping("/deleteById/{nutritionId}")
-	public void deleteStudent(@PathVariable Integer nutritionId)
-	{
-		 service.deleteById(nutritionId);
+	public void deleteStudent(@PathVariable Integer nutritionId) {
+		service.deleteById(nutritionId);
 	}
 
 }

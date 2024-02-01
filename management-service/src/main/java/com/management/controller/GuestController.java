@@ -27,40 +27,36 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/guest")
 public class GuestController {
-	public static Logger log=LoggerFactory.getLogger(Guest.class.getSimpleName());
+	public static Logger log = LoggerFactory.getLogger(Guest.class.getSimpleName());
 	@Autowired
 	private GuestService guestService;
-	
-	@PostMapping(path="/add")
-	public ResponseEntity<Guest>save(@RequestBody Guest guest){
+
+	@PostMapping(path = "/add")
+	public ResponseEntity<Guest> save(@RequestBody Guest guest) {
 		log.info("Saving Guest {}", guest);
 		guestService.save(guest);
-		ResponseEntity<Guest> responseEntity = new ResponseEntity<>(guest,
-				HttpStatus.CREATED);
+		ResponseEntity<Guest> responseEntity = new ResponseEntity<>(guest, HttpStatus.CREATED);
 		return responseEntity;
 	}
-	
+
 	@GetMapping(path = "/getById/{id}")
 	public ResponseEntity<Guest> get(@PathVariable Long id) {
 		log.info("Fetching guest  {}", id);
 
 		Guest guest = guestService.get(id);
 
-		ResponseEntity<Guest> responseEntity = new ResponseEntity<>(guest,
-				HttpStatus.OK);
+		ResponseEntity<Guest> responseEntity = new ResponseEntity<>(guest, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	@GetMapping(path="/getAll")
-	public ResponseEntity <List<Guest>> getAll()
-	{
+
+	@GetMapping(path = "/getAll")
+	public ResponseEntity<List<Guest>> getAll() {
 		log.info("getting all guest");
-		List<Guest> guest=guestService.getAll();
-		ResponseEntity <List<Guest>> responseEntity=new ResponseEntity<>(guest,HttpStatus.OK);
+		List<Guest> guest = guestService.getAll();
+		ResponseEntity<List<Guest>> responseEntity = new ResponseEntity<>(guest, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	
+
 	@DeleteMapping(path = "/deleteById/{id}")
 	public String deleteById(@PathVariable Long id) {
 		log.info("deleting guest {}", id);
@@ -68,14 +64,13 @@ public class GuestController {
 		guestService.deleteById(id);
 		return "deleted successfully";
 	}
-	
-	@PutMapping(path="/updateById/{id}")
+
+	@PutMapping(path = "/updateById/{id}")
 	public Guest update(@RequestBody Guest guest) {
 		Guest update = guestService.update(guest);
 		System.out.println("updated successfully");
 		return update;
-		
+
 	}
-	
 
 }

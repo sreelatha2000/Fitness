@@ -46,45 +46,6 @@ private Integer enrolled;
 @Column(name = "duration")
 private String duration;
 
-public Long getClassId() {
-	return classId;
-}
-
-public void setClassId(Long classId) {
-	this.classId = classId;
-}
-
-public String getClassName() {
-	return className;
-}
-
-public void setClassName(String className) {
-	this.className = className;
-}
-
-public Date getDate() {
-	return date;
-}
-
-public void setDate(Date date) {
-	this.date = date;
-}
-
-public Integer getEnrolled() {
-	return enrolled;
-}
-
-public void setEnrolled(Integer enrolled) {
-	this.enrolled = enrolled;
-}
-
-public String getDuration() {
-	return duration;
-}
-
-public void setDuration(String duration) {
-	this.duration = duration;
-}
 
 
 

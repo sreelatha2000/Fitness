@@ -6,7 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table(name="membership_table")
 public class Membership {
@@ -21,33 +25,7 @@ public class Membership {
 	private String period;
 	@Column(name="description")
 	private String description;
-	
-	public Long getMembershipId() {
-		return membershipId;
-	}
-	public void setMembershipId(Long membershipId) {
-		this.membershipId = membershipId;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public String getPeriod() {
-		return period;
-	}
-	public void setPeriod(String period) {
-		this.period = period;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	
+
 	
 
 }

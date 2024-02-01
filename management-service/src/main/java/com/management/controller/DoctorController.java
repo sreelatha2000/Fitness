@@ -27,40 +27,36 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/doctor_profile")
 public class DoctorController {
-	public static Logger log=LoggerFactory.getLogger(Doctor.class.getSimpleName());
+	public static Logger log = LoggerFactory.getLogger(Doctor.class.getSimpleName());
 	@Autowired
 	private DoctorService doctorService;
-	
-	@PostMapping(path="/add")
-	public ResponseEntity<Doctor>save(@RequestBody Doctor doctor){
+
+	@PostMapping(path = "/add")
+	public ResponseEntity<Doctor> save(@RequestBody Doctor doctor) {
 		log.info("Saving doctor {}", doctor);
 		doctorService.save(doctor);
-		ResponseEntity<Doctor> responseEntity = new ResponseEntity<>(doctor,
-				HttpStatus.CREATED);
+		ResponseEntity<Doctor> responseEntity = new ResponseEntity<>(doctor, HttpStatus.CREATED);
 		return responseEntity;
 	}
-	
+
 	@GetMapping(path = "/getById/{id}")
 	public ResponseEntity<Doctor> get(@PathVariable Long id) {
 		log.info("Fetching doctor  {}", id);
 
 		Doctor doctor = doctorService.get(id);
 
-		ResponseEntity<Doctor> responseEntity = new ResponseEntity<>(doctor,
-				HttpStatus.OK);
+		ResponseEntity<Doctor> responseEntity = new ResponseEntity<>(doctor, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	@GetMapping(path="/getAll")
-	public ResponseEntity <List<Doctor>> getAll()
-	{
+
+	@GetMapping(path = "/getAll")
+	public ResponseEntity<List<Doctor>> getAll() {
 		log.info("getting all doctors");
-		List<Doctor> doctor=doctorService.getAll();
-		ResponseEntity <List<Doctor>> responseEntity=new ResponseEntity<>(doctor,HttpStatus.OK);
+		List<Doctor> doctor = doctorService.getAll();
+		ResponseEntity<List<Doctor>> responseEntity = new ResponseEntity<>(doctor, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	
+
 	@DeleteMapping(path = "/deleteById/{id}")
 	public String deleteById(@PathVariable Long id) {
 		log.info("deleting doctor {}", id);
@@ -68,14 +64,13 @@ public class DoctorController {
 		doctorService.deleteById(id);
 		return "deleted successfully";
 	}
-	
-	@PutMapping(path="/updateById/{id}")
+
+	@PutMapping(path = "/updateById/{id}")
 	public Doctor update(@RequestBody Doctor doctor) {
 		Doctor update = doctorService.update(doctor);
 		System.out.println("updated successfully");
 		return update;
-		
+
 	}
-	
 
 }

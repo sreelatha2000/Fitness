@@ -6,7 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
 @Entity
 @Table(name="guest_table")
 public class Guest 
@@ -20,24 +23,6 @@ public class Guest
 	private String  password;
 	@Column(name="destination")
 	private String destination;
-	public Long getGuestId() {
-		return guestId;
-	}
-	public void setGuestId(Long guestId) {
-		this.guestId = guestId;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getDestination() {
-		return destination;
-	}
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
 	
 	
 	

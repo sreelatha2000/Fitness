@@ -11,10 +11,9 @@ import com.healthservice.exception.ResourceNotFoundException;
 import com.healthservice.repository.UserNutritionRepository;
 import com.healthservice.service.UserNutritionService;
 
-
 @Service
 public class UserNutritionServiceImpl implements UserNutritionService {
-	
+
 	@Autowired
 	UserNutritionRepository repository;
 
@@ -38,29 +37,27 @@ public class UserNutritionServiceImpl implements UserNutritionService {
 
 	@Override
 	public Nutrition updateNutrition(Nutrition bean) {
-		Optional<Nutrition> optional=repository.findById(bean.getNutritionId());
-		if(optional.isPresent())
-		{
+		Optional<Nutrition> optional = repository.findById(bean.getNutritionId());
+		if (optional.isPresent()) {
 			repository.save(bean);
 		}
-		
+
 		return bean;
-	
-		
+
 	}
 
 	@Override
 	public void deleteById(Integer nutritionId) {
 		// TODO Auto-generated method stub
-		Optional<Nutrition> optional=repository.findById(nutritionId);
-		if(optional.isPresent())
-		{
+		Optional<Nutrition> optional = repository.findById(nutritionId);
+		if (optional.isPresent()) {
 			repository.deleteById(nutritionId);
-			
+
 		}
-		
-		else optional.orElseThrow(()->new ResourceNotFoundException("no record to delete"));
-		
-		//return "data deleted";
+
+		else
+			optional.orElseThrow(() -> new ResourceNotFoundException("no record to delete"));
+
+		// return "data deleted";
 	}
 }

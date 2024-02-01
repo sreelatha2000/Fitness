@@ -17,45 +17,37 @@ import com.healthservice.entity.MedicalHistory;
 
 import com.healthservice.service.MedicalHistoryService;
 
-
-
 @RestController
 @RequestMapping("medicalHistory")
 public class MedicalHistoryController {
 
-	
 	@Autowired
 	MedicalHistoryService service;
-	
+
 	@PostMapping("/save")
-	public MedicalHistory saveNewMedicalHistory(@RequestBody MedicalHistory bean)
-	{
+	public MedicalHistory saveNewMedicalHistory(@RequestBody MedicalHistory bean) {
 		return service.saveNewMedicalHistory(bean);
-		
+
 	}
-	
+
 	@GetMapping("/getById/{memberId}")
-	public MedicalHistory getById(@PathVariable Integer memberId)
-	{
+	public MedicalHistory getById(@PathVariable Integer memberId) {
 		return service.getById(memberId);
 	}
-	
+
 	@GetMapping("/getAll")
-	public List<MedicalHistory> getAll()
-	{
+	public List<MedicalHistory> getAll() {
 		return service.getAllMedicalHistory();
 	}
-	
+
 	@PutMapping("/updateById")
-	public MedicalHistory updateMedicalHistory(@RequestBody MedicalHistory bean)
-	{
+	public MedicalHistory updateMedicalHistory(@RequestBody MedicalHistory bean) {
 		return service.updateMedicalHistory(bean);
-		
+
 	}
 
 	@DeleteMapping("/deleteById/{memberId}")
-	public void deleteMedicalHistory(@PathVariable Integer memberId)
-	{
+	public void deleteMedicalHistory(@PathVariable Integer memberId) {
 		service.deleteById(memberId);
 	}
 }

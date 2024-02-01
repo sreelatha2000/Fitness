@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
+@Setter
+@Getter
 @Entity
 @Table(name="trainer_profile")
 public class Trainer implements Serializable {
@@ -36,56 +37,6 @@ public class Trainer implements Serializable {
 	private String certification;
 	@Column(name="contact_No")
 	private String contactNumber;
-	
-	public Long getTrainerId() {
-		return trainerId;
-	}
-	public void setTrainerId(Long trainerId) {
-		this.trainerId = trainerId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getAge() {
-		return age;
-	}
-	public void setAge(String age) {
-		this.age = age;
-	}
-	public Integer getYearOfExperience() {
-		return yearOfExperience;
-	}
-	public void setYearOfExperience(Integer yearOfExperience) {
-		this.yearOfExperience = yearOfExperience;
-	}
-	public String getShiftTimings() {
-		return shiftTimings;
-	}
-	public void setShiftTimings(String shiftTimings) {
-		this.shiftTimings = shiftTimings;
-	}
-	public String getCertification() {
-		return certification;
-	}
-	public void setCertification(String certification) {
-		this.certification = certification;
-	}
-	public String getContactNumber() {
-		return contactNumber;
-	}
-	public void setContactNumber(String contactNumber) {
-		this.contactNumber = contactNumber;
-	}
-	
-	
-	
-	
-	
-	
-	
 	
 
 

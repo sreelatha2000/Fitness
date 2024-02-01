@@ -24,50 +24,5 @@ public class Achievement {
 
 	private String description;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getAchievementType() {
-		return achievementType;
-	}
-
-	public void setAchievementType(String achievementType) {
-		this.achievementType = achievementType;
-	}
-
-	public Date getDateCompleted() {
-		return dateCompleted;
-	}
-
-	public void setDateCompleted(Date dateCompleted) {
-		this.dateCompleted = dateCompleted;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@Override
-	public String toString() {
-		return "Achievement [id=" + id + ", achievementType=" + achievementType + ", dateCompleted=" + dateCompleted
-				+ ", description=" + description + "]";
-	}
-
-	public Achievement(Long id, String achievementType, Date dateCompleted, String description) {
-		super();
-		this.id = id;
-		this.achievementType = achievementType;
-		this.dateCompleted = dateCompleted;
-		this.description = description;
-	}
     
 }

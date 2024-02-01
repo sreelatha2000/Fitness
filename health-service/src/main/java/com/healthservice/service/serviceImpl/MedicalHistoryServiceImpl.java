@@ -13,7 +13,7 @@ import com.healthservice.service.MedicalHistoryService;
 
 @Service
 public class MedicalHistoryServiceImpl implements MedicalHistoryService {
-	
+
 	@Autowired
 	MedicalHistoryRepository repository;
 
@@ -35,30 +35,28 @@ public class MedicalHistoryServiceImpl implements MedicalHistoryService {
 		return repository.findAll();
 	}
 
-	
 	@Override
 	public void deleteById(Integer memberId) {
-		Optional<MedicalHistory> optional=repository.findById(memberId);
-		if(optional.isPresent())
-		{
+		Optional<MedicalHistory> optional = repository.findById(memberId);
+		if (optional.isPresent()) {
 			repository.deleteById(memberId);
-			
+
 		}
-		
-		else optional.orElseThrow(()->new ResourceNotFoundException("no record to delete"));
-		
-		//return "data deleted";
+
+		else
+			optional.orElseThrow(() -> new ResourceNotFoundException("no record to delete"));
+
+		// return "data deleted";
 	}
 
 	@Override
 	public MedicalHistory updateMedicalHistory(MedicalHistory bean) {
 		// TODO Auto-generated method stub
-		Optional<MedicalHistory> optional=repository.findById(bean.getMemberId());
-		if(optional.isPresent())
-		{
+		Optional<MedicalHistory> optional = repository.findById(bean.getMemberId());
+		if (optional.isPresent()) {
 			repository.save(bean);
 		}
-		
+
 		return bean;
 	}
 

@@ -1,4 +1,4 @@
-	package com.management.controller;
+package com.management.controller;
 
 import java.util.List;
 
@@ -27,42 +27,37 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/trainer")
-public class TrainerController 
-{
-	public static Logger log=LoggerFactory.getLogger(Membership.class.getSimpleName());
+public class TrainerController {
+	public static Logger log = LoggerFactory.getLogger(Membership.class.getSimpleName());
 	@Autowired
 	private TrainerService trinerService;
-	
-	@PostMapping(path="/add")
-	public ResponseEntity<Trainer>save(@RequestBody Trainer trainer){
+
+	@PostMapping(path = "/add")
+	public ResponseEntity<Trainer> save(@RequestBody Trainer trainer) {
 		log.info("Saving trainer {}", trainer);
 		trinerService.save(trainer);
-		ResponseEntity<Trainer> responseEntity = new ResponseEntity<>(trainer,
-				HttpStatus.CREATED);
+		ResponseEntity<Trainer> responseEntity = new ResponseEntity<>(trainer, HttpStatus.CREATED);
 		return responseEntity;
 	}
-	
+
 	@GetMapping(path = "/getById/{id}")
 	public ResponseEntity<Trainer> get(@PathVariable Long id) {
 		log.info("Fetching trainer  {}", id);
 
 		Trainer trainer = trinerService.get(id);
 
-		ResponseEntity<Trainer> responseEntity = new ResponseEntity<>(trainer,
-				HttpStatus.OK);
+		ResponseEntity<Trainer> responseEntity = new ResponseEntity<>(trainer, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	@GetMapping(path="/getAll")
-	public ResponseEntity <List<Trainer>> getAll()
-	{
+
+	@GetMapping(path = "/getAll")
+	public ResponseEntity<List<Trainer>> getAll() {
 		log.info("getting all trainer");
-		List<Trainer> trainer=trinerService.getAll();
-		ResponseEntity <List<Trainer>> responseEntity=new ResponseEntity<>(trainer,HttpStatus.OK);
+		List<Trainer> trainer = trinerService.getAll();
+		ResponseEntity<List<Trainer>> responseEntity = new ResponseEntity<>(trainer, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	
+
 	@DeleteMapping(path = "/deleteById/{id}")
 	public String deleteById(@PathVariable long id) {
 		log.info("deleting trainer {}", id);
@@ -70,15 +65,12 @@ public class TrainerController
 		trinerService.deleteById(id);
 		return "deleted successfully";
 	}
-	
-	@PutMapping(path="/updateById/{id}")
+
+	@PutMapping(path = "/updateById/{id}")
 	public Trainer update(@RequestBody Trainer trainer) {
 		Trainer update = trinerService.update(trainer);
 		System.out.println("updated successfully");
 		return update;
 	}
-	
-
-	
 
 }

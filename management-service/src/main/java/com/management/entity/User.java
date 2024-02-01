@@ -9,7 +9,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
 @Entity
 @Table(name="user_profile")
 public class User implements Serializable
@@ -27,39 +30,6 @@ public class User implements Serializable
 	private Date dob;
 	@Column(name="age")
 	private Integer age;
-	
-	public Long getUserId() {
-		return userId;
-	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Date getDob() {
-		return dob;
-	}
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-	
-	
 	
 
 }

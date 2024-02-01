@@ -16,34 +16,35 @@ public class ExerciseServiceImpl implements ExerciseService {
 
 	@Autowired
 	private ExerciseRepository exerciseRepository;
-	
+
 	@Override
 	public void save(Exercise exercise) {
 		exerciseRepository.save(exercise);
 		System.out.println("Save success");
 	}
-	
+
 	@Override
 	public void update(Exercise exercise) {
-		Optional<Exercise> optional=exerciseRepository.findById(exercise.getExerciseId());
-		if(optional.isEmpty()) {
+		Optional<Exercise> optional = exerciseRepository.findById(exercise.getExerciseId());
+		if (optional.isEmpty()) {
 			try {
-					optional.orElseThrow(()->new ResourceNotFoundException("No Exercise found to update for id : "+exercise.getExerciseId()));
-			}catch(ResourceNotFoundException e) {
+				optional.orElseThrow(() -> new ResourceNotFoundException(
+						"No Exercise found to update for id : " + exercise.getExerciseId()));
+			} catch (ResourceNotFoundException e) {
 				throw e;
 			}
 		}
 		exerciseRepository.save(exercise);
 		System.out.println("Update Success");
 	}
-	
+
 	@Override
 	public Exercise getById(Long id) {
-		Optional<Exercise> optional=exerciseRepository.findById(id);
-		if(optional.isEmpty()) {
+		Optional<Exercise> optional = exerciseRepository.findById(id);
+		if (optional.isEmpty()) {
 			try {
-				optional.orElseThrow(()->new ResourceNotFoundException("No Exercise found to fetch for id : "+id));
-			}catch(ResourceNotFoundException e) {
+				optional.orElseThrow(() -> new ResourceNotFoundException("No Exercise found to fetch for id : " + id));
+			} catch (ResourceNotFoundException e) {
 				throw e;
 			}
 		}
@@ -53,17 +54,16 @@ public class ExerciseServiceImpl implements ExerciseService {
 
 	@Override
 	public List<Exercise> getAll() {
-		 return exerciseRepository.findAll();
+		return exerciseRepository.findAll();
 	}
 
 	@Override
 	public Exercise delete(Long id) {
-		Optional<Exercise> optional=exerciseRepository.findById(id);
-		if(optional.isEmpty()) {
+		Optional<Exercise> optional = exerciseRepository.findById(id);
+		if (optional.isEmpty()) {
 			try {
-				optional.orElseThrow(()->new ResourceNotFoundException("No Exercise found to delete for id : "+id));
-			}
-			catch(ResourceNotFoundException e) {
+				optional.orElseThrow(() -> new ResourceNotFoundException("No Exercise found to delete for id : " + id));
+			} catch (ResourceNotFoundException e) {
 				throw e;
 			}
 		}

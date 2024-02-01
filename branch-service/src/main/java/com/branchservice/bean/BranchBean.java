@@ -14,8 +14,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
-
 public class BranchBean  {
 	private static final long serialVersionUID = -1516965327693370237L;
 

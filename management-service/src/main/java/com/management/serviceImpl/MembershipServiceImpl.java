@@ -17,8 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class MembershipServiceImpl implements MembershipService
-{
+public class MembershipServiceImpl implements MembershipService {
 	@Autowired
 	private MembershipRepository membershipRepository;
 
@@ -34,52 +33,48 @@ public class MembershipServiceImpl implements MembershipService
 
 	@Override
 	public Membership deleteById(Long id) {
-		  Optional<Membership> optional = membershipRepository.findById(id);	
-		  if(optional.isEmpty()) {
-			  try {
-				  optional.orElseThrow(()->new ResourceNotFoundException("No membership found to delete for id:"+id));
-			  }catch (ResourceNotFoundException e) {
+		Optional<Membership> optional = membershipRepository.findById(id);
+		if (optional.isEmpty()) {
+			try {
+				optional.orElseThrow(() -> new ResourceNotFoundException("No membership found to delete for id:" + id));
+			} catch (ResourceNotFoundException e) {
 				throw e;
 			}
-		  }
-		  membershipRepository.deleteById(id);
-		  System.out.println("fetching successfully");
-		  return optional.get();
+		}
+		membershipRepository.deleteById(id);
+		System.out.println("fetching successfully");
+		return optional.get();
 	}
 
 	@Override
 	public Membership update(Membership membership) {
 		Optional<Membership> optional = membershipRepository.findById(membership.getMembershipId());
-		if(optional.isEmpty()) {
-		try {
-			optional.orElseThrow(()-> new ResourceNotFoundException("No trainer found to update :"
-		                                                                  +membership.getType()));
-		}catch (ResourceNotFoundException e) {
-			throw e;
+		if (optional.isEmpty()) {
+			try {
+				optional.orElseThrow(
+						() -> new ResourceNotFoundException("No trainer found to update :" + membership.getType()));
+			} catch (ResourceNotFoundException e) {
+				throw e;
+			}
 		}
-	}
 		membershipRepository.save(membership);
 		System.out.println("updated successfully");
 		return membership;
-
 
 	}
 
 	@Override
 	public Membership get(Long id) {
-		 Optional<Membership> optional = membershipRepository.findById(id);	
-		  if(optional.isEmpty()) {
-			  try {
-				  optional.orElseThrow(()->new ResourceNotFoundException("No membership found to fetch for id:"+id));
-			  }catch (ResourceNotFoundException e) {
+		Optional<Membership> optional = membershipRepository.findById(id);
+		if (optional.isEmpty()) {
+			try {
+				optional.orElseThrow(() -> new ResourceNotFoundException("No membership found to fetch for id:" + id));
+			} catch (ResourceNotFoundException e) {
 				throw e;
 			}
-		  }
-		  System.out.println("fetching successfully");
-		  return optional.get();
+		}
+		System.out.println("fetching successfully");
+		return optional.get();
 	}
-
-
-	
 
 }
