@@ -41,7 +41,7 @@ public class AchievementController {
 
 	@GetMapping(path = "/getById/{id}")
 	public ResponseEntity<Achievement> get(@PathVariable Long id) {
-		log.info("Fetching achievement {}", id);
+		log.info("Fetching achievement by id {}", id);
 		
 			Achievement achievement = achievementService.get(id);
 
