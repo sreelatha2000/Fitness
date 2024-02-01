@@ -60,10 +60,10 @@ public class TrainerServiceImpl  implements TrainerService{
 	}
 		
 	public Trainer update(Trainer trainer) {
-		Optional<Trainer> optional = trainerRepository.findById(trainer.getId());
+		Optional<Trainer> optional = trainerRepository.findById(trainer.getTrainerId());
 		if(optional.isEmpty()) {
 		try {
-			optional.orElseThrow(()-> new ResourceNotFoundException("No trainer found to update :"+trainer.getId()
+			optional.orElseThrow(()-> new ResourceNotFoundException("No trainer found to update :"+trainer.getTrainerId()
 			));
 		}catch (ResourceNotFoundException e) {
 			throw e;

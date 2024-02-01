@@ -5,16 +5,16 @@ import java.util.Date;
 import jakarta.persistence.Column;
 
 public class User {
-	private Long id;
+	private Long userId;
 	private String userName;
 	private String password;
 	private Date dob;
 	private Integer age;
-	public Long getId() {
-		return id;
+	public Long getUserId() {
+		return userId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	public String getUserName() {
 		return userName;
@@ -40,18 +40,19 @@ public class User {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	public User(Long id, String userName, String password, Date dob, Integer age) {
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", dob=" + dob
+				+ ", age=" + age + "]";
+	}
+	public User(Long userId, String userName, String password, Date dob, Integer age) {
 		super();
-		this.id = id;
+		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
 		this.dob = dob;
 		this.age = age;
 	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", dob=" + dob + ", age=" + age
-				+ "]";
-	}
+	
    
 }

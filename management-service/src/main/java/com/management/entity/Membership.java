@@ -14,18 +14,19 @@ public class Membership {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="membership_id")
-	private Long id;
+	private Long membershipId;
 	@Column(name="type")
 	private String type;
 	@Column(name="period")
 	private String period;
 	@Column(name="description")
 	private String description;
-	public Long getId() {
-		return id;
+	
+	public Long getMembershipId() {
+		return membershipId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setMembershipId(Long membershipId) {
+		this.membershipId = membershipId;
 	}
 	public String getType() {
 		return type;

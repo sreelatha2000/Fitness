@@ -23,7 +23,7 @@ public class Trainer implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="trainer_id")
-	private Long id;
+	private Long trainerId;
 	@Column(name="trainer_name")
 	private String name;
 	@Column(name="age")
@@ -36,11 +36,12 @@ public class Trainer implements Serializable {
 	private String certification;
 	@Column(name="contact_No")
 	private String contactNumber;
-	public Long getId() {
-		return id;
+	
+	public Long getTrainerId() {
+		return trainerId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setTrainerId(Long trainerId) {
+		this.trainerId = trainerId;
 	}
 	public String getName() {
 		return name;

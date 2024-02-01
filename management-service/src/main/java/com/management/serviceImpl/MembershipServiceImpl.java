@@ -49,7 +49,7 @@ public class MembershipServiceImpl implements MembershipService
 
 	@Override
 	public Membership update(Membership membership) {
-		Optional<Membership> optional = membershipRepository.findById(membership.getId());
+		Optional<Membership> optional = membershipRepository.findById(membership.getMembershipId());
 		if(optional.isEmpty()) {
 		try {
 			optional.orElseThrow(()-> new ResourceNotFoundException("No trainer found to update :"
