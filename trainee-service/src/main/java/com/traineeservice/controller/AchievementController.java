@@ -29,7 +29,8 @@ public class AchievementController {
 
 	@PostMapping("/save")
 	public ResponseEntity<Achievement> save(@RequestBody Achievement achievement) {
-		log.info("Saving achievement", achievement);
+		log.info("Saving achievement1", achievement);
+		log.info("Saving achievement2", achievement);
 
 		achievementService.save(achievement);
 

@@ -24,6 +24,7 @@ public class AchievementServiceImpl implements AchievementService {
 	public void save(Achievement achievement) {
 		achievementRepository.save(achievement);
 		log.info("achievement details saved ", achievement);
+		log.info("achievement details saved ", achievement);
 	
 	}
 
