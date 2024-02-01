@@ -54,7 +54,7 @@ public class DoctorController {
 	@GetMapping(path="/getAll")
 	public ResponseEntity <List<Doctor>> getAll()
 	{
-		log.info("getting all patients");
+		log.info("getting all doctors");
 		List<Doctor> doctor=doctorService.getAll();
 		ResponseEntity <List<Doctor>> responseEntity=new ResponseEntity<>(doctor,HttpStatus.OK);
 		return responseEntity;

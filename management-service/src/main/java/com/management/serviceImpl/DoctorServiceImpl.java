@@ -63,10 +63,10 @@ public class DoctorServiceImpl  implements DoctorService{
 	}
 
 	public Doctor update(Doctor doctor) {
-		 Optional<Doctor> optional = doctorRepository.findById(doctor.getId());
+		 Optional<Doctor> optional = doctorRepository.findById(doctor.getDoctorId());
 			if(optional.isEmpty()) {
 			try {
-				optional.orElseThrow(()-> new ResourceNotFoundException("No guest found to update :"+doctor.getId()
+				optional.orElseThrow(()-> new ResourceNotFoundException("No guest found to update :"+doctor.getDoctorId()
 				));
 			}catch (ResourceNotFoundException e) {
 				throw e;

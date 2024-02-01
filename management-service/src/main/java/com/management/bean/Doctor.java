@@ -4,18 +4,18 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 public class Doctor
 {
-	private Long id;
+	private Long doctorId;
 	private String doctorName;
 	private Integer yearOfExperience;
 	private String contactNumber;
 	private String shiftTimings;
 	private String specialization;
 	private String gender;
-	public Long getId() {
-		return id;
+	public Long getDoctorId() {
+		return doctorId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setDoctorId(Long doctorId) {
+		this.doctorId = doctorId;
 	}
 	public String getDoctorName() {
 		return doctorName;
@@ -53,16 +53,10 @@ public class Doctor
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	@Override
-	public String toString() {
-		return "Doctor [id=" + id + ", doctorName=" + doctorName + ", yearOfExperience=" + yearOfExperience
-				+ ", contactNumber=" + contactNumber + ", shiftTimings=" + shiftTimings + ", specialization="
-				+ specialization + ", gender=" + gender + "]";
-	}
-	public Doctor(Long id, String doctorName, Integer yearOfExperience, String contactNumber, String shiftTimings,
+	public Doctor(Long doctorId, String doctorName, Integer yearOfExperience, String contactNumber, String shiftTimings,
 			String specialization, String gender) {
 		super();
-		this.id = id;
+		this.doctorId = doctorId;
 		this.doctorName = doctorName;
 		this.yearOfExperience = yearOfExperience;
 		this.contactNumber = contactNumber;
@@ -70,6 +64,13 @@ public class Doctor
 		this.specialization = specialization;
 		this.gender = gender;
 	}
+	@Override
+	public String toString() {
+		return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", yearOfExperience=" + yearOfExperience
+				+ ", contactNumber=" + contactNumber + ", shiftTimings=" + shiftTimings + ", specialization="
+				+ specialization + ", gender=" + gender + "]";
+	}
+	
 	
 	
 

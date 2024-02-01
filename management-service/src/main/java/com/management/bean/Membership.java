@@ -3,15 +3,15 @@ package com.management.bean;
 import jakarta.persistence.Column;
 
 public class Membership {
-	private Long id;
+	private Long membershipId;
 	private String type;
 	private String period;
 	private String description;
-	public Long getId() {
-		return id;
+	public Long getMembershipId() {
+		return membershipId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setMembershipId(Long membershipId) {
+		this.membershipId = membershipId;
 	}
 	public String getType() {
 		return type;
@@ -31,17 +31,19 @@ public class Membership {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	@Override
-	public String toString() {
-		return "Membership [id=" + id + ", type=" + type + ", period=" + period + ", description=" + description + "]";
-	}
-	public Membership(Long id, String type, String period, String description) {
+	public Membership(Long membershipId, String type, String period, String description) {
 		super();
-		this.id = id;
+		this.membershipId = membershipId;
 		this.type = type;
 		this.period = period;
 		this.description = description;
 	}
+	@Override
+	public String toString() {
+		return "Membership [membershipId=" + membershipId + ", type=" + type + ", period=" + period + ", description="
+				+ description + "]";
+	}
+	
 	
    
 }
