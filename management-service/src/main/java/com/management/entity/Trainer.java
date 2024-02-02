@@ -1,12 +1,15 @@
 package com.management.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -37,6 +40,8 @@ public class Trainer implements Serializable {
 	private String certification;
 	@Column(name="contact_No")
 	private String contactNumber;
+//	@OneToMany(mapped="trainer_profile",cascade = CascadeType.ALL, orphanRemoval = true)
+//	private List<User>user =new ArrayList<>();
 	
 
 
