@@ -1,5 +1,8 @@
 package com.paymentservice.service;
 
+import java.util.List;
+
+import com.paymentservice.bean.PaymentInfoBean;
 import com.paymentservice.entity.Payment;
 
 public interface PaymentService {
@@ -15,5 +18,7 @@ public interface PaymentService {
 	
 
 	void updateEntity(Long paymentId, String paymentMode);
+	
+	List<PaymentInfoBean> getPaymentMembership();
 
 }

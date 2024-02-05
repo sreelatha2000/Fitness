@@ -77,6 +77,9 @@ public class Payment implements Serializable {
 		this.paymentMode = paymentMode;
 	}
 	
+	@Column(name = "membership_id")
+	private Long membershipId;
+	
 	
 	
 	//  @OneToOne(fetch = FetchType.LAZY)
