@@ -83,6 +83,9 @@ public class PaymentController {
 		
 	}
 	
+	
+
+	
 //	@PutMapping(path="/update/{paymentId}")
 //	public ResponseEntity<Payments> updateById(@RequestBody Payments payments) {
 //		// log.info("Saving patient {}", payments);
