@@ -69,10 +69,10 @@ public class UserServiceImpl  implements UserService{
 
 	@Override
 	public User update(User user) {
-		Optional<User> optional = userRepository.findById(user.getId());
+		Optional<User> optional = userRepository.findById(user.getUserId());
 		if(optional.isEmpty()) {
 		try {
-			optional.orElseThrow(()-> new ResourceNotFoundException("No user found to update :"+user.getId()
+			optional.orElseThrow(()-> new ResourceNotFoundException("No user found to update :"+user.getUserId()
 			));
 		}catch (ResourceNotFoundException e) {
 			throw e;

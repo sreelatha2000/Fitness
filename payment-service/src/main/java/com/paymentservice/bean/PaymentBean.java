@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 
-public class Payment {
+public class PaymentBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "payment_id")
@@ -35,6 +35,8 @@ public class Payment {
 	
 	
 	private String paymentDate;
+	
+	private MembershipBean membership;
 	
 	
 	

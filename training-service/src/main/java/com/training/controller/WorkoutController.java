@@ -26,7 +26,9 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(path = "/workout")
 public class WorkoutController {
+
 	public static Logger log=LoggerFactory.getLogger(Workout.class.getSimpleName());
+
 	@Autowired
 	private WorkoutService workoutService;
 

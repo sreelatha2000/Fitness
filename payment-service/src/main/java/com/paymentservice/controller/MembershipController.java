@@ -6,6 +6,7 @@ package com.paymentservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.paymentservice.bean.ResponseDto;
 import com.paymentservice.entity.Membership;
 import com.paymentservice.service.MembershipService;
 
@@ -30,49 +32,58 @@ public class MembershipController {
 	@Autowired
 	private MembershipService membershipService;
 	
-
+	
+    @GetMapping(path="/{id}")
+    public ResponseEntity<ResponseDto> getMembership(@PathVariable("id") Long membershipId){
+        ResponseDto responseDto = membershipService.getMembership(membershipId);
+        
+        System.out.println("member");
+        return ResponseEntity.ok(responseDto);
+    }
 
 //	@Autowired
 //	private MembershipRepository MembershipRepository;
 
 	@PostMapping(path = "/save")
-	public ResponseEntity<Membership> save(@RequestBody Membership membership) {
+	public ResponseEntity<Membership> saveMembership(@RequestBody Membership membership) {
 		// log.info("Saving patient {}", Membership);
-		System.out.println("saving");
-		membershipService.save(membership);
-		System.out.println("changes");
-
-		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(membership, HttpStatus.CREATED);
-		return responseEntity;
-	}
-	
-	@GetMapping(path = "/{membershipId}")
-	public ResponseEntity<Membership> getPatient(@PathVariable Long membershipId) {
-		//log.info("Fetching Membership {}", paymentId);
-		Membership membership = membershipService.get(membershipId);
-		System.out.print("Membership getted successfully");
-		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(membership,
-				HttpStatus.OK);
-		System.out.println("Membership getted successfully1");
+		
+		Membership savedMembership=  membershipService.saveMembership(membership);
+		
+		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(savedMembership, HttpStatus.CREATED);
+		System.out.println("save changes");
 		return responseEntity;
 		
-	}
-	
-	
-	@DeleteMapping(path="/{membershipId}")
-	
-	public String deletePatient(@PathVariable Long membershipId)
-	
-	{
-		
-		Membership membership = membershipService.deleteById(membershipId);
-		System.out.print("Membership getted successfully");
-		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(membership,
-				HttpStatus.OK);
-		
-		return "record deleted";
 		
 	}
+	
+//	@GetMapping(path = "/{membershipId}")
+//	public ResponseEntity<Membership> getMembership(@PathVariable Long membershipId) {
+//		//log.info("Fetching Membership {}", paymentId);
+//		ResponseDto membership = membershipService.getMembership(membershipId);
+//		System.out.print("Membership getted successfully");
+//		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(membership,
+//				HttpStatus.OK);
+//		System.out.println("Membership getted successfully1");
+//		return responseEntity;
+//		
+//	}
+	
+	
+//	@DeleteMapping(path="/{membershipId}")
+//	
+//	public String deletePatient(@PathVariable Long membershipId)
+//	
+//	{
+//		
+//		Membership membership = membershipService.deleteById(membershipId);
+//		System.out.print("Membership getted successfully");
+//		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(membership,
+//				HttpStatus.OK);
+//		
+//		return "record deleted";
+//		
+//	}
 	
 //	@PutMapping(path="/update/{paymentId}")
 //	public ResponseEntity<Membership> updateById(@RequestBody Membership Membership) {
@@ -84,16 +95,16 @@ public class MembershipController {
 //		return responseEntity;
 //	}
 //	
-	@PutMapping("/update/{membershipId}")
-    public void updateEntity(@PathVariable Long membershipId, @RequestParam String membershipType) {
-        // Perform validation or error handling as needed
-
-		
-		
-		membershipService.updateEntity(membershipId, membershipType);
-
-       
-    }
+//	@PutMapping("/update/{membershipId}")
+//    public void updateEntity(@PathVariable Long membershipId, @RequestParam String membershipType) {
+//        // Perform validation or error handling as needed
+//
+//		
+//		
+//		membershipService.updateEntity(membershipId, membershipType);
+//
+//       
+//    }
 	
 	
 	

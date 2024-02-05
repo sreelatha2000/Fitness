@@ -40,4 +40,9 @@ public class Progress implements Serializable{
 	@Column(name="fitness_test_results")
 	private Double fitnessTestResults;
 
+	public Long getProgressId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

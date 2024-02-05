@@ -46,6 +46,11 @@ private Integer enrolled;
 @Column(name = "duration")
 private String duration;
 
+public Long getClassId() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 
 
 //@ManyToMany(fetch=FetchType.LAZY,cascade = {CascadeType.ALL},mappedBy = "class_scheduling")

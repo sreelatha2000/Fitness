@@ -1,5 +1,7 @@
 package com.management.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,14 +11,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="doctor_profile")
-public class Doctor 
+public class Doctor implements Serializable
 {
-	private static final Long serialVersionUID = -1516965327693370237L;
-
+	private static final long serialVersionUID = 286526036275847L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="doctor_id")
-	private Long id;
+	private Long doctorId;
 	@Column(name="doctor_name")
 	private String doctorName;
 	@Column(name="year_of_experience")
@@ -29,11 +31,12 @@ public class Doctor
 	private String specialization;
 	@Column(name="gender")
 	private String gender;
-	public Long getId() {
-		return id;
+	
+	public Long getDoctorId() {
+		return doctorId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setDoctorId(Long doctorId) {
+		this.doctorId = doctorId;
 	}
 	public String getDoctorName() {
 		return doctorName;

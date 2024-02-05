@@ -1,34 +1,24 @@
-package com.management.entity;
+package com.paymentservice.bean;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity
-@Table(name="user_profile")
-public class User implements Serializable
-{
-	private static final long serialVersionUID = 4358596869124424986L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="user_id")
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class UserBean {
 	private Long userId;
-	@Column(name="user_name")
 	private String userName;
-	@Column(name="password")
 	private String password;
-	@Column(name="dob")
 	private Date dob;
-	@Column(name="age")
 	private Integer age;
-	
 	public Long getUserId() {
 		return userId;
 	}
@@ -59,8 +49,10 @@ public class User implements Serializable
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	
-	
-	
-
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", dob=" + dob
+				+ ", age=" + age + "]";
+	}
+	   
 }

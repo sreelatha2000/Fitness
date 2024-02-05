@@ -1,21 +1,18 @@
 package com.management.bean;
 
-import jakarta.persistence.Column;
-
 public class Trainer {
-	private Long id;
+	private Long trainerId;
 	private String name;
 	private String age;
 	private Integer yearOfExperience;
 	private String shiftTimings;
 	private String certification;
 	private String contactNumber;
-	public Trainer() {}
-	public Long getId() {
-		return id;
+	public Long getTrainerId() {
+		return trainerId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setTrainerId(Long trainerId) {
+		this.trainerId = trainerId;
 	}
 	public String getName() {
 		return name;
@@ -53,10 +50,16 @@ public class Trainer {
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public Trainer(Long id, String name, String age, Integer yearOfExperience, String shiftTimings,
+	@Override
+	public String toString() {
+		return "Trainer [trainerId=" + trainerId + ", name=" + name + ", age=" + age + ", yearOfExperience="
+				+ yearOfExperience + ", shiftTimings=" + shiftTimings + ", certification=" + certification
+				+ ", contactNumber=" + contactNumber + "]";
+	}
+	public Trainer(Long trainerId, String name, String age, Integer yearOfExperience, String shiftTimings,
 			String certification, String contactNumber) {
 		super();
-		this.id = id;
+		this.trainerId = trainerId;
 		this.name = name;
 		this.age = age;
 		this.yearOfExperience = yearOfExperience;
@@ -64,13 +67,7 @@ public class Trainer {
 		this.certification = certification;
 		this.contactNumber = contactNumber;
 	}
-	@Override
-	public String toString() {
-		return "Trainer [id=" + id + ", name=" + name + ", age=" + age + ", yearOfExperience=" + yearOfExperience
-				+ ", shiftTimings=" + shiftTimings + ", certification=" + certification + ", contactNumber="
-				+ contactNumber + "]";
-	}
-
+    
 	
 
 }

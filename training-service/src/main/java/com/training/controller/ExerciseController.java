@@ -28,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ExerciseController {
 
 	public static Logger log=LoggerFactory.getLogger(Exercise.class.getSimpleName());
+
 	@Autowired
 	private ExerciseService exerciseService;
 

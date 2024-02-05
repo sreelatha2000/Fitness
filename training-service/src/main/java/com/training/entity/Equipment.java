@@ -43,5 +43,10 @@ public class Equipment implements Serializable{
 	@Column(name="purchase_date")
 	private Date purchaseDate;
 
+	public Long getEquipmentId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

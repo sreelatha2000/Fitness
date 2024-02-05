@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.management.entity.Doctor;
-import com.management.entity.Trainer;
 import com.management.service.DoctorService;
-import com.management.service.TrainerService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -54,7 +52,7 @@ public class DoctorController {
 	@GetMapping(path="/getAll")
 	public ResponseEntity <List<Doctor>> getAll()
 	{
-		log.info("getting all patients");
+		log.info("getting all doctors");
 		List<Doctor> doctor=doctorService.getAll();
 		ResponseEntity <List<Doctor>> responseEntity=new ResponseEntity<>(doctor,HttpStatus.OK);
 		return responseEntity;

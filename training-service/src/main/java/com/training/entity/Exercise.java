@@ -44,5 +44,10 @@ public class Exercise implements Serializable {
 	
 	@Column(name="intensity_level")
 	private String intensityLevel;
+
+	public Long getExerciseId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

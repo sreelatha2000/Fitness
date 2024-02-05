@@ -44,5 +44,10 @@ public class Achievement implements Serializable {
 //	@OneToOne
 //	@JoinColumn(name="profile_id")
 //	private Long profileId;
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

@@ -43,4 +43,9 @@ public class Workout implements Serializable{
 	@Column(name="user_id")
 	private Long userId;
 
+	public Long getWorkoutId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

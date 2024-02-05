@@ -8,22 +8,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 
 @Entity
 @Table(name="trainer_profile")
 public class Trainer implements Serializable {
-	private static final Long serialVersionUID = -1516965327693370237L;
-
+	
+	private static final long serialVersionUID = -7021201705390582788L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="trainer_id")
-	private Long id;
+	private Long trainerId;
 	@Column(name="trainer_name")
 	private String name;
 	@Column(name="age")
@@ -36,11 +30,12 @@ public class Trainer implements Serializable {
 	private String certification;
 	@Column(name="contact_No")
 	private String contactNumber;
-	public Long getId() {
-		return id;
+	
+	public Long getTrainerId() {
+		return trainerId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setTrainerId(Long trainerId) {
+		this.trainerId = trainerId;
 	}
 	public String getName() {
 		return name;

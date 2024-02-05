@@ -26,7 +26,9 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(path = "/progress")
 public class ProgressController {
+
 	public static Logger log=LoggerFactory.getLogger(Progress.class.getSimpleName());
+
 	@Autowired
 	private ProgressService progressService;
 
