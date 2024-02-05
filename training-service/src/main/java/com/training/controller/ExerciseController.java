@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.training.entity.Exercise;
 import com.training.service.ExerciseService;
 
@@ -26,7 +27,8 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(path = "/exercise")
 public class ExerciseController {
 
-	public static Logger log = LoggerFactory.getLogger(Exercise.class.getSimpleName());
+	public static Logger log=LoggerFactory.getLogger(Exercise.class.getSimpleName());
+
 	@Autowired
 	private ExerciseService exerciseService;
 

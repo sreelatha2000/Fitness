@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.training.entity.Equipment;
 import com.training.service.EquipmentService;
 
@@ -26,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(path = "/equipment")
 public class EquipmentController {
 
-	public static Logger log = LoggerFactory.getLogger(Equipment.class.getSimpleName());
+	public static Logger log=LoggerFactory.getLogger(Equipment.class.getSimpleName());
 
 	@Autowired
 	private EquipmentService equipmentService;

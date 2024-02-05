@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.training.entity.Equipment;
+
 import com.training.entity.Progress;
 import com.training.service.ProgressService;
 
@@ -26,8 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(path = "/progress")
 public class ProgressController {
-	
-	public static Logger log = LoggerFactory.getLogger(Progress.class.getSimpleName());
+
+	public static Logger log=LoggerFactory.getLogger(Progress.class.getSimpleName());
 
 	@Autowired
 	private ProgressService progressService;
