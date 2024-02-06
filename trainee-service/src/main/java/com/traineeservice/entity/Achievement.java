@@ -41,13 +41,10 @@ public class Achievement implements Serializable {
 
 	@Column(name = "description")
 	private String description;
-//	@OneToOne
-//	@JoinColumn(name="profile_id")
-//	private Long profileId;
 
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	@Column(name="user_id")
+	private Long userId;
+
+	
 	
 }

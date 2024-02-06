@@ -14,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Achievement {
+public class AchievementBean {
 //	@NotNull(message="id is required")
 	private Long id;
 
@@ -24,5 +24,5 @@ public class Achievement {
 
 	private String description;
 
-//	private Long profileId;
+	private Long userId;
 }

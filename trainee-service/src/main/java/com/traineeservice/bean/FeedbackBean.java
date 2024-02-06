@@ -2,8 +2,6 @@ package com.traineeservice.bean;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,17 +14,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Attendance {
-//	 @NotNull(message = "Count is required")
-	private Long id;
-//	@NotEmpty(message = "Name is required")
-	private String name;
+public class FeedbackBean {
+	@NotNull(message = "id is required")	
+	private Long feedbackId;
+
+	private String text;
 
 	private Date date;
 
-	private String status;
-
-	private String feedback;
+	private Integer rating;
 
 //	private Long profileId;
 }

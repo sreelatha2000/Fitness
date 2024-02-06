@@ -16,69 +16,62 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.management.entity.Trainer;
 import com.management.entity.User;
 import com.management.exception.ResourceNotFoundException;
-import com.management.service.TrainerService;
+import com.management.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
-
 
 @Slf4j
 @RestController
 @RequestMapping("/user")
-public class UserController 
-{
-	public static Logger log=LoggerFactory.getLogger(User.class.getSimpleName());
+public class UserController {
+	public static Logger log = LoggerFactory.getLogger(User.class.getSimpleName());
 	@Autowired
-	private TrainerService trainerService;
-	
-	@PostMapping(path="/add")
-	public ResponseEntity<Trainer>save(@RequestBody Trainer trainer){
-		log.info("Saving trainer {}", trainer);
-		trainerService.save(trainer);
-		ResponseEntity<Trainer> responseEntity = new ResponseEntity<>(trainer,
-				HttpStatus.CREATED);
+	private UserService userService;
+
+	@PostMapping(path = "/add")
+	public ResponseEntity<User> save(@RequestBody User user) {
+		log.info("Saving User {}", user);
+		userService.save(user);
+		ResponseEntity<User> responseEntity = new ResponseEntity<>(user, HttpStatus.CREATED);
 		return responseEntity;
 	}
-	
+
 	@GetMapping(path = "/getById/{id}")
-	public ResponseEntity<Trainer> getTrainer(@PathVariable Long id) throws Exception{
-		log.info("Fetching trainer  {}", id);
-        try {
-        	 Trainer trainer = trainerService.get(id);
-        	 System.out.println("Getting trainer details  successfully");
-        	 ResponseEntity<Trainer> responseEntity = new ResponseEntity<>(trainer,
-     				HttpStatus.OK);
-        	 return responseEntity;
-        }catch (ResourceNotFoundException e) {
-        	System.out.println(e.getMessage());
+	public ResponseEntity<User> getUser(@PathVariable Long id) throws Exception {
+		log.info("Fetching User  {}", id);
+		try {
+			User user = userService.get(id);
+			System.out.println("Getting User details  successfully");
+			ResponseEntity<User> responseEntity = new ResponseEntity<>(user, HttpStatus.OK);
+			return responseEntity;
+		} catch (ResourceNotFoundException e) {
+			System.out.println(e.getMessage());
 		}
-		
-             return null;	
+
+		return null;
 	}
-	
-	@GetMapping(path="/getAll")
-	public ResponseEntity <List<Trainer>> getAll()
-	{
+
+	@GetMapping(path = "/getAll")
+	public ResponseEntity<List<User>> getAll() {
 		log.info("getting all patients");
-		List<Trainer> trainer=trainerService.getAll();
-		ResponseEntity <List<Trainer>> responseEntity=new ResponseEntity<>(trainer,HttpStatus.OK);
+		List<User> user = userService.getAll();
+		ResponseEntity<List<User>> responseEntity = new ResponseEntity<>(user, HttpStatus.OK);
 		return responseEntity;
 	}
-	
-	
+
 	@DeleteMapping(path = "/deleteById/{id}")
 	public String deleteById(@PathVariable Long id) {
 		log.info("deleting patient {}", id);
 
-		trainerService.deleteById(id);
+		userService.deleteById(id);
 		return "deleted successfully";
 	}
-	
-	@PutMapping(path="/updateById/{id}")
-	public Trainer update(@RequestBody Trainer trainer) {
-		Trainer update = trainerService.update(trainer);
+
+	@PutMapping(path = "/updateById/{id}")
+	public User update(@RequestBody User user) {
+		User update = userService.update(user);
 		System.out.println("updated successfully");
 		return update;
 	}

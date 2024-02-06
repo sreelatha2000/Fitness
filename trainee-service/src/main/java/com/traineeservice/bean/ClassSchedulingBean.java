@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ClassScheduling {
+public class ClassSchedulingBean {
 	// @NotNull(message = "Count is required")
 	private Long classId;
 	//@NotEmpty(message = "Name is required")
