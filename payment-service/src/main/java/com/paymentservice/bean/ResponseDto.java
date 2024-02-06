@@ -1,15 +1,14 @@
 package com.paymentservice.bean;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+
 import lombok.Setter;
 
 @Setter
 	@Getter
-	@NoArgsConstructor
-	@AllArgsConstructor
+	
 	@Data
 	public class ResponseDto {
 	    private MembershipBean membershipBean;
