@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 @Getter
 @Setter
-public class MedicalHistory {
+public class MedicalHistoryBean {
 
 	private Long memberId;
 	private Date dateOfAssessment;
