@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.healthservice.bean.ResponseDto;
 import com.healthservice.entity.MedicalHistory;
 
 
@@ -12,12 +13,13 @@ public interface MedicalHistoryService {
 
 	MedicalHistory saveNewMedicalHistory(MedicalHistory bean);
 
-	MedicalHistory getById(Integer memberId);
+	ResponseDto getById(Long memberId);
 
 	List<MedicalHistory> getAllMedicalHistory();
 
 	MedicalHistory updateMedicalHistory(MedicalHistory bean);
 
-	void deleteById(Integer memberId);
+	void deleteById(Long memberId);
 
+	
 }
