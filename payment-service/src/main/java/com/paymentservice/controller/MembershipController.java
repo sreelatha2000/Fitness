@@ -80,10 +80,12 @@ public class MembershipController {
 //		System.out.print("Membership getted successfully");
 //		ResponseEntity<Membership> responseEntity = new ResponseEntity<>(membership,
 //				HttpStatus.OK);
-//		
+//	  
 //		return "record deleted";
 //		
 //	}
+	
+	
 	
 //	@PutMapping(path="/update/{paymentId}")
 //	public ResponseEntity<Membership> updateById(@RequestBody Membership Membership) {
