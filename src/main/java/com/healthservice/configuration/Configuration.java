@@ -2,6 +2,9 @@ package com.healthservice.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -23,20 +26,20 @@ public class Configuration {
 	}
 
 	@Bean
-	public RestTemplate restTemplate()
-	{
+	public RestTemplate restTemplate() {
 		return new RestTemplate();
-		
+
 	}
-	// @Bean
-	// public CorsFilter corsFilter() {
-//	    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//	    CorsConfiguration config = new CorsConfiguration();
-//	    config.addAllowedOrigin("http://localhost:4200");
-//	    config.addAllowedHeader("*");
-//	    config.addAllowedMethod("*");
-//	    source.registerCorsConfiguration("/**", config);
-//	    return new CorsFilter(source);
-	//   }
-	// }
+
+	@Bean
+	public CorsFilter corsFilter() {
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		CorsConfiguration config = new CorsConfiguration();
+		config.addAllowedOrigin("http://localhost:4200");
+		config.addAllowedHeader("*");
+		config.addAllowedMethod("*");
+		source.registerCorsConfiguration("/**", config);
+		return new CorsFilter(source);
+	}
+
 }

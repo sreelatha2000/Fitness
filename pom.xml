@@ -12,6 +12,7 @@
 	<artifactId>health-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>health-service</name>
+	<packaging>war</packaging>
 	<description>Health Service Module</description>
 	<properties>
 		<java.version>17</java.version>

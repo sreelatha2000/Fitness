@@ -1,7 +1,5 @@
 package com.healthservice.bean;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,17 +12,19 @@ import lombok.ToString;
 @Getter
 @Setter
 public class NutritionBean {
-	
-private Integer nutritionId;
-private String foodItem;
-private String caloriesToBeconsumed;
-private String proteinToBeconsumed;
-private String carbohydratesToBeconsumed;
-private String fatsToBeconsumed;
-private String fiberToBeconsumed;
-private String vitaminsAndMineralsToBeconsumed;
-private String sugarToBeconsumed;
-private String sodiumToBeconsumed;
-public Long userId;
+
+	private Integer nutritionId;
+
+	private String foodItem;
+
+	private String caloriesToBeconsumed;
+
+	private String proteinToBeconsumed;
+
+	private String carbohydratesToBeconsumed;
+
+	public Long userId;
+
+	public String username;
 
 }

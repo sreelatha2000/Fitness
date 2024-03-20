@@ -2,6 +2,7 @@ package com.healthservice.entity;
 
 import org.springframework.web.client.RestTemplate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,13 +25,20 @@ public class Nutrition {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer nutritionId;
+
+	@Column(name = "food_item")
 	private String foodItem;
+
+	@Column(name = "calories_consumed")
 	private String caloriesToBeconsumed;
+
+	@Column(name = "protein_consumed")
 	private String proteinToBeconsumed;
+
+	@Column(name = "carbohydrates_consumed")
 	private String carbohydratesToBeconsumed;
-	private String fatsToBeconsumed;
-	private String fiberToBeconsumed;
-	private String vitaminsAndMineralsToBeconsumed;
-	private String sugarToBeconsumed;
-	private String sodiumToBeconsumed;
+
+	@Column(name = "user_name")
+	public String username;
+
 }

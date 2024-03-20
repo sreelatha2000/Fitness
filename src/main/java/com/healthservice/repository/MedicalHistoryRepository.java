@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.healthservice.entity.MedicalHistory;
 
 public interface MedicalHistoryRepository extends JpaRepository<MedicalHistory, Long> {
-
-//	 MedicalHistory findByUserName(String userName);
-
+	
+	List<MedicalHistory> findByUsername(String username);
 }

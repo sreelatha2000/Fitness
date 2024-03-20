@@ -1,5 +1,6 @@
 package com.healthservice.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,18 +23,30 @@ public class MedicalHistory {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long memberId;
+	private Long medicalHistoryId;
+
+	@Column(name = "date_of_assessment")
 	private String dateOfAssessment;
-	private int bloodPressure;
-	private int heartRate;
+
+	@Column(name = "blood_presure")
+	private String bloodPressure;
+
+	@Column(name = "heart_rate")
+	private Long heartRate;
+
+	@Column(name = "allergies")
 	private String allergies;
-	private String medications;
-	private String chronicCondition;
-	private String familyMedicalHistory;
+
+	@Column(name = "previous_injury_surgery")
 	private String previousInjuryOrSurgery;
-	private int fitnessLevel;
-	private Integer physicianContactNumber;
-	private Long userId;
-//	private String userName;
+
+	@Column(name = "fitness_level")
+	private Long fitnessLevel;
+
+	@Column(name = "body_mass_index")
+	private Long bodyMassIndex;
+
+	@Column(name = "user_name")
+	public String username;
 
 }

@@ -3,6 +3,7 @@ package com.healthservice.service;
 import java.util.List;
 
 import com.healthservice.bean.ResponseDto;
+import com.healthservice.bean.UserBean;
 import com.healthservice.entity.Nutrition;
 
 public interface UserNutritionService {
@@ -13,10 +14,12 @@ public interface UserNutritionService {
 
 	List<Nutrition> getAllNutrition();
 
-	Nutrition updateNutrition(Nutrition bean);
+	public Nutrition updateNutrition(Integer nutritionId, Nutrition updatedNutrition);
 
 	void deleteById(Integer nutritionId);
-	
 
+	public List<UserBean> getUserBean();
+
+	List<Nutrition> getByUsername(String username);
 
 }

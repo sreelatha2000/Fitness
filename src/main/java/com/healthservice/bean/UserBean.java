@@ -1,17 +1,36 @@
 package com.healthservice.bean;
 
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Getter
 @Setter
 public class UserBean {
 	private Long userId;
-	private String userName;
+
+	private String name;
+
 	private String password;
-	private String dob;
-	private Integer age;
+
+	private Date dateOfBirth;
+
+	private String email;
+
+	private Long contactNumber;
+
+	private String role;
+
+	private String trainerCode;
+
+	private String doctorCode;
 
 }

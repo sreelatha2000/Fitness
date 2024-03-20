@@ -13,19 +13,22 @@ import lombok.ToString;
 @Setter
 public class MedicalHistoryBean {
 
-	private Long memberId;
+	private Long medicalHistoryId;
+
 	private String dateOfAssessment;
-	private int bloodPressure;
-	private int heartRate;
+
+	private String bloodPressure;
+
+	private Long heartRate;
+
 	private String allergies;
-	private String medications;
-	private String chronicCondition;
-	private String familyMedicalHistory;
+
 	private String previousInjuryOrSurgery;
-	private int fitnessLevel;
-	private Integer physicianContactNumber;
-	public Long userId;
-//	public String userName;
 
+	private Long fitnessLevel;
 
+	private Long bodyMassIndex;
+
+	public String username;
+    
 }
